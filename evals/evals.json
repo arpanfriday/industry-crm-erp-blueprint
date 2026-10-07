@@ -1,0 +1,66 @@
+{
+  "skill_name": "industry-crm-erp-blueprint",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're a SaaS company running Salesforce and NetSuite. Help me design how data should flow between them.",
+      "expected_output": "Blueprint for TMT: confirms industry, lists verified compliance items (ASC 606 / IFRS 15, ASC 340-40, privacy), ARR-centric drivers, SSOT table, Closed-Won to subscription to rev-rec lifecycle with status flowing back to CRM, sync pacing, ARR-waterfall aggregation.",
+      "expectations": [
+        "Searched or fetched current official sources before stating regulatory or vendor details",
+        "Confirmed the industry (TMT) and used the named CRM/ERP products or generic labels",
+        "Read only the TMT reference file, not all seven",
+        "SSOT table gives exactly one owner per data object",
+        "Lifecycle includes a Closed-Won trigger leading to ERP contract/subscription creation and status returning to CRM",
+        "Sync pacing assigns real-time to the Closed-Won event and batch to aggregate ledger data, with rationale",
+        "Aggregation rules include source grain, target dimensions, and a reconciliation check to the ERP trial balance",
+        "Scope stays on CRM and ERP only",
+        "Output follows the blueprint template and ends with open questions and sources"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to figure out which system should be the source of truth for patient referrals and financials at a hospital group, and how often to sync them.",
+      "expected_output": "Health Care blueprint that keeps PHI out of CRM, applies HIPAA minimum necessary, places clinical and billing data in the EHR/PM system, and uses aggregated, de-identified data downstream.",
+      "expectations": [
+        "Identified or confirmed Health Care as the vertical",
+        "Treated HIPAA as a core compliance boundary and mentioned BAAs or minimum necessary",
+        "Placed patient encounter data outside CRM and flagged PHI minimization",
+        "Specified de-identification or aggregation before data reaches CRM or reporting",
+        "Verified HIPAA and any other cited rule against current official sources and cited URLs"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Construction company, monthly job costs. Do we need real-time sync between our CRM and ERP?",
+      "expected_output": "Real Estate | Construction guidance that recommends monthly batch for job cost and WIP aligned to close, reserving near-real-time for bid-won project setup, with ASC 606 percent-complete aggregation.",
+      "expectations": [
+        "Recommended scheduled batch for aggregate job-cost data with a rationale",
+        "Noted where near-real-time is still appropriate (for example bid won to project setup)",
+        "Mentioned ASC 606 over-time recognition and verified it against a current source",
+        "Did not sum percent-complete values across projects"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "We're a wealth management firm and also have a small insurance arm. Design our CRM to ERP integration.",
+      "expected_output": "Financial Services blueprint as primary vertical with the insurance arm noted as an overlay or open question, including KYC/AML ownership, GLBA, PCI where relevant, and real-time vs EOD batch pacing.",
+      "expectations": [
+        "Chose a primary vertical and noted the secondary one as an overlay",
+        "Addressed KYC/AML status ownership and recordkeeping or privacy obligations",
+        "Real-time pacing limited to payments or KYC triggers; ledger postings as batch",
+        "Listed open questions about the insurance arm instead of guessing"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Use the skill, but web search is disabled in this session. We're a medical device manufacturer, design the CRM-ERP data flows.",
+      "expected_output": "States that web verification is unavailable, marks regulatory and vendor statements as unverified, and asks the user to paste current text or enable search, while still making progress.",
+      "expectations": [
+        "Explicitly said web search/fetch is unavailable",
+        "Marked regulatory statements as unverified",
+        "Asked the user to enable search or paste the relevant documentation",
+        "Asked which listed vertical fits best (Life Sciences or Consumer Goods and Manufacturing) instead of guessing silently"
+      ]
+    }
+  ]
+}

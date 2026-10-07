@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Which system should be the source of truth for customer contracts between Salesforce and NetSuite?",
+    "Walk me through how a closed-won deal should flow into the ERP for a manufacturing client.",
+    "How often should we sync ERP invoices back to the CRM, and how should we summarize the transactions?",
+    "Design the CRM-ERP integration architecture for a professional services firm.",
+    "What compliance requirements shape our CRM-ERP integration design for a life sciences client?"
+  ],
+  "should_not_trigger": [
+    "Write a SQL query to join customers and orders tables.",
+    "Explain what ASC 606 is in simple terms.",
+    "Help me write a Salesforce Apex trigger that updates an account field.",
+    "Create a monthly budget spreadsheet for my household.",
+    "Summarize this earnings call transcript."
+  ]
+}
