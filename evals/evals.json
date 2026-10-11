@@ -61,6 +61,21 @@
         "Asked the user to enable search or paste the relevant documentation",
         "Asked which listed vertical fits best (Life Sciences or Consumer Goods and Manufacturing) instead of guessing silently"
       ]
+    },
+    {
+      "id": 6,
+      "prompt": "I'm new to this. We run HubSpot and Microsoft Dynamics 365 Business Central at a mid-size manufacturer. Walk me through the CRM-ERP blueprint step by step.",
+      "expected_output": "At each confirmation point (industry, operational drivers, system ownership) the question is understandable to a newcomer: it defines the term, shows the proposed items in the question or a table just above it, and offers options that say what will happen.",
+      "expectations": [
+        "Step 1 question explained why the industry choice matters and gave each industry option a short gloss",
+        "Step 1 asked for the CRM and ERP products in the same turn and allowed 'not sure'",
+        "Step 3 defined 'operational driver' in plain language before asking",
+        "Step 3 showed the proposed drivers with meaning, source system, consumer and why each fits, and named the metrics in the question itself",
+        "Step 3 options described what would happen (use as proposed, add a metric, replace one) and extra metrics came from the industry file or were labelled as the model's own addition",
+        "Step 4 defined 'single source of truth' in plain language before asking",
+        "Step 4 SSOT table included what each object is, proposed owner, join key and rationale, and named contested objects in the question",
+        "Step 4 options described what would happen (accept map, change one owner, discuss a contested object)"
+      ]
     }
   ]
 }

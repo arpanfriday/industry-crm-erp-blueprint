@@ -44,6 +44,8 @@ If the user's business spans two verticals, choose the primary one and note the 
 
 Also ask which CRM and ERP products are in play. If unknown, proceed with generic "CRM / ERP" labels.
 
+Make the question self-contained. Explain briefly that the industry choice selects the compliance rules, metrics and data flows used in every later step. Give each option a few-word gloss of what it covers (for example "Life Sciences: pharma, biotech, medical devices") so users who don't know the label can still choose. Allow "Other" and the two-vertical overlay. Ask about the CRM and ERP products in the same turn, noting that "not sure" is fine.
+
 ## Step 2: Establish compliance boundaries
 
 Use the industry file's "Compliance boundaries" section as the candidate list, then confirm each item in Step 0. For each applicable standard or regulation, state:
@@ -56,7 +58,11 @@ Flag items that apply only conditionally (for example HIPAA only where PHI is pr
 
 ## Step 3: Isolate key operational drivers
 
-From "Operational drivers" in the industry file, select the 3-5 metrics that matter most for this client. For each, name the source system and which system or report consumes it. Ask the user to confirm or swap metrics. These drivers decide what must be integrated and at what grain.
+From "Operational drivers" in the industry file, select the 3-5 metrics that matter most for this client. For each, name the source system and which system or report consumes it. These drivers decide what must be integrated and at what grain.
+
+Before asking, explain in plain language: a driver is a business metric the integration must keep accurate between CRM and ERP, and the choice sets the integration scope and the sync detail in Steps 4-7. Then present the proposed drivers as a short table (metric | what it means in one line | source system | who or what consumes it | why it fits this client, based on their Step 1 answers). Avoid unexplained jargon.
+
+Then ask the user to confirm. Make the question self-contained: list the metric names in the question itself, and give options that say what happens, for example "Use these as proposed", "Add a metric (name it, or pick from: <other drivers from the industry file, each with a few-word gloss>)", "Replace one (tell me which and with what)". Offer extra metrics only from the industry file, or say plainly when a suggestion is your own addition.
 
 ## Step 4: Map system ownership (single source of truth)
 
@@ -65,6 +71,10 @@ Build an SSOT table: one owning system per critical data object. Start from "SSO
 - Exactly one owner per data object. The other system holds a read-only copy.
 - State the key used to join records across systems (customer ID, contract ID, project ID).
 - Call out contested objects (for example customer master, product master) and recommend an owner with rationale.
+
+Before asking for confirmation, explain in plain language: a single source of truth (SSOT) means one system is the authority for each kind of data, and the other only holds a copy, so the two never disagree. Present the SSOT table with columns: data object | what it is in one line | proposed owner | join key | why. Mark contested objects clearly.
+
+Make the confirmation question self-contained: name the contested objects in the question, and give options that say what happens, for example "Use this ownership map as proposed", "Change the owner of one object (tell me which and to which system)", "Discuss a contested object first (<name them>)". Avoid unexplained jargon.
 
 ## Step 5: Trace the data lifecycle
 
